@@ -1,0 +1,12 @@
+mat-sidenav{
+  width: 20%;
+}
+.example-container, mat-sidenav-container{
+  height: 100%;
+}
+.mat-drawer-side{
+  border: none;
+}
+mat-sidenav mat-icon{
+  margin-right: 10px;
+}

@@ -1,0 +1,37 @@
+mat-card{
+  margin: 8% auto;
+  padding: 20px;
+  width: 70%;
+}
+mat-card-title{
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.form-container {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.form-container > * {
+  width: 100% !important;
+}
+.btns{
+  margin-top: 15px !important;
+}
+.cancelBtn{
+  margin-left: 5px;
+}
+.example-right-align {
+  /* text-align: right; */
+}
+mat-form-field span{
+  padding-left: 3px;
+}
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}

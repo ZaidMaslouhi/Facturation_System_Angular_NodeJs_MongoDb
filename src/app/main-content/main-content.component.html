@@ -1,0 +1,23 @@
+<div class="example-container">
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav mode="side" opened="true" class="app-sidenav mat-elevation-z15">
+      <mat-toolbar color="primary" class="example-toolbar">
+        <h1 class="example-app-name">Dashboard</h1>
+      </mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="invoices"><mat-icon>receipt</mat-icon>Invoices</a>
+        <a mat-list-item routerLink="clients"><mat-icon>face</mat-icon>Clients</a>
+        <a mat-list-item routerLink="/"><mat-icon>exit_to_app</mat-icon>Signout</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <h1 class="example-app-name">Invoice Builder</h1>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

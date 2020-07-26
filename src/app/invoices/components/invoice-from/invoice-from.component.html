@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-title>
+    Create New Invoice
+  </mat-card-title>
+  <mat-card-content>
+    {{ invoiceForm.value | json}}
+    <form method="POST" class="form-container" [formGroup]="invoiceForm"
+          novalidate (ngSubmit)="onSubmit()">
+      <mat-form-field color="primary">
+        <input matInput placeholder="Item" formControlName="item">
+        <mat-error *ngIf="invoiceForm.controls.item.invalid && invoiceForm.controls.item.touched">
+          item is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary">
+        <input matInput [matDatepicker]="date" placeholder="Choose a date" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+        <mat-datepicker #date></mat-datepicker>
+        <mat-error *ngIf="invoiceForm.controls.date.invalid && invoiceForm.controls.date.touched">
+          date is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary">
+        <input matInput [matDatepicker]="due" placeholder="Choose a due date" formControlName="due">
+        <mat-datepicker-toggle matSuffix [for]="due"></mat-datepicker-toggle>
+        <mat-datepicker #due></mat-datepicker>
+        <mat-error *ngIf="invoiceForm.controls.due.invalid && invoiceForm.controls.due.touched">
+          due is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary">
+        <input matInput type="number" placeholder="Quantity" formControlName="qty">
+        <mat-error *ngIf="invoiceForm.controls.qty.invalid && invoiceForm.controls.qty.touched">
+          quantity is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary">
+        <input matInput placeholder="Rate" type="number" class="example-right-align" formControlName="rate">
+        <span matSuffix>.00 DH</span>
+      </mat-form-field>
+
+      <mat-form-field color="primary">
+        <input matInput placeholder="Tax" type="number" class="example-right-align" formControlName="tax">
+        <span matSuffix>%</span>
+      </mat-form-field>
+
+      <div class="btns">
+        <button mat-raised-button [disabled]="!invoiceForm.valid" color="primary" type="submit">Save</button>
+        <button mat-button type="reset" class="cancelBtn">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
